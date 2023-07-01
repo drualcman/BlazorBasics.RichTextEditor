@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -13,6 +12,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\snow.css" />
+    <None Include="wwwroot\js\htmlEditorService.js" />
+    <None Include="wwwroot\js\quill136.js" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,12 @@
+<HeadContent>
+    <link rel="stylesheet" href="@(ContentHelper.ContentPath)/css/snow.css" />
+</HeadContent>
+@if(!EditorReady)
+{
+    <p>Loading editor...</p>
+}
+<section @attributes=AdditionalAttributes>
+    <div data-editor="true" id="@EditorId">
+       @Html
+    </div>
+</section>
