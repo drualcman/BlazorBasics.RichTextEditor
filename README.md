@@ -1,8 +1,13 @@
+[![Nuget](https://img.shields.io/nuget/v/BlazorBasics.RichTextEditor?style=for-the-badge)](https://www.nuget.org/packages/BlazorBasics.RichTextEditor)
+[![Nuget](https://img.shields.io/nuget/dt/BlazorBasics.RichTextEditor?style=for-the-badge)](https://www.nuget.org/packages/BlazorBasics.RichTextEditor)
+
 # Description
 A simple Rich Text Editor for Blazor Server or Blazor WebAssembly applications. This rich text editor is based in [Quill](https://quilljs.com/) JavaScript.
 
 # How to use
-Clone this repository and add the project to your solution.<br/>
+Nugget installation
+```PM> Install-Package BlazorBasics.RichTextEditor```
+Or clone the [repository](https://github.com/drualcman/BlazorBasics.RichTextEditor) and add the project to your solution.<br/>
 Add the component where you want to show rich text editor like this example:
 ``` RAZOR
 <RichTextEditorComponent Html=HtmlMarkupString OnSave="SaveHtml"/>
