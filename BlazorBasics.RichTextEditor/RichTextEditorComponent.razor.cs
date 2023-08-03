@@ -99,7 +99,9 @@ public partial class RichTextEditorComponent : IAsyncDisposable
     public async Task OnSave_Click(string e)
     {
         if(OnSave.HasDelegate)
-            await OnSave.InvokeAsync(e);
+        {
+            await OnSave.InvokeAsync(ContentHelper.CheckIfHaveContent(e));
+        }
     }
 
     [JSInvokable]
