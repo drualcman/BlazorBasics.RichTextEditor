@@ -14,20 +14,6 @@ internal static class ContentHelper
 
     public static string CheckIfHaveContent(string content)
     {
-        string result;
-        if(content.Length < 12 || content.ToLower() == "<p><br></p>")
-        {
-            result = string.Empty;
-        }
-        else
-        {
-            result = SearchForContent(content);
-        }
-        return result;
-    }
-
-    private static string SearchForContent(string content)
-    {
         Regex regex = new Regex("(?<=>)([\\w\\s]+)(?=<\\/)");
         var matchs = regex.Matches(content);
         int totalLines = matchs.Count();
