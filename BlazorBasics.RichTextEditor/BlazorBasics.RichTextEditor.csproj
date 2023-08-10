@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.3</Version>
+	  <Version>1.0.4</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
@@ -14,12 +14,12 @@
 	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.RichTextEditor</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>blazor;right text editor;blazor server; blazor webassembly</PackageTags>
-	  <AssemblyVersion>1.0.3</AssemblyVersion>
-	  <FileVersion>1.0.3</FileVersion>
+	  <AssemblyVersion>1.0.4</AssemblyVersion>
+	  <FileVersion>1.0.4</FileVersion>
 	  <PackageId>BlazorBasics.RichTextEditor</PackageId>
 	  <Product>BlazorBasics.RichTextEditor</Product>
 	  <Title>BlazorBasics.RichTextEditor</Title>
-	  <PackageReleaseNotes>Improved detect if have content or not to return a string empty, because if content it's only 1 character before still returning string empty.</PackageReleaseNotes>
+	  <PackageReleaseNotes>Fixed regex tog et teh correct html tags to verify if have content</PackageReleaseNotes>
   </PropertyGroup>
 
 

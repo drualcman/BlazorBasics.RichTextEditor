@@ -14,7 +14,7 @@ internal static class ContentHelper
 
     public static string CheckIfHaveContent(string content)
     {
-        Regex regex = new Regex("(?<=>)([\\w\\s]+)(?=<\\/)");
+        Regex regex = new Regex("(?<=>)[^<]+");
         var matchs = regex.Matches(content);
         int totalLines = matchs.Count();
         int c = 0;
