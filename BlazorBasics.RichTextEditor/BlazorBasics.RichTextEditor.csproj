@@ -19,7 +19,7 @@
 	  <PackageId>BlazorBasics.RichTextEditor</PackageId>
 	  <Product>BlazorBasics.RichTextEditor</Product>
 	  <Title>BlazorBasics.RichTextEditor</Title>
-	  <PackageReleaseNotes>Fixed regex tog et teh correct html tags to verify if have content</PackageReleaseNotes>
+	  <PackageReleaseNotes>Fixed regex got the correct html tags to verify if have content</PackageReleaseNotes>
   </PropertyGroup>
 
 
