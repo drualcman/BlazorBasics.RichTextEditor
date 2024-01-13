@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+	  <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.4</Version>
+	  <Version>1.0.5</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
@@ -14,12 +14,12 @@
 	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.RichTextEditor</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>blazor;right text editor;blazor server; blazor webassembly</PackageTags>
-	  <AssemblyVersion>1.0.4</AssemblyVersion>
-	  <FileVersion>1.0.4</FileVersion>
+	  <AssemblyVersion>1.0.5</AssemblyVersion>
+	  <FileVersion>1.0.5</FileVersion>
 	  <PackageId>BlazorBasics.RichTextEditor</PackageId>
 	  <Product>BlazorBasics.RichTextEditor</Product>
 	  <Title>BlazorBasics.RichTextEditor</Title>
-	  <PackageReleaseNotes>Fixed regex got the correct html tags to verify if have content</PackageReleaseNotes>
+	  <PackageReleaseNotes>Fixed issue when is used in Blazor Server and/or Blazor Prerendered. Avoid required Html parameter in editor, because can be used without this varialbe. Only it's required to send previous content. Update nugets and NET versions</PackageReleaseNotes>
   </PropertyGroup>
 
 
@@ -28,7 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.26"  Condition="'$(TargetFramework)' == 'net6.0'"/>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.15"  Condition="'$(TargetFramework)' == 'net7.0'"/>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1"  Condition="'$(TargetFramework)' == 'net8.0'"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -2,7 +2,7 @@
 public partial class RichTextEditorComponent : IAsyncDisposable
 {
     [Inject] public IJSRuntime JSRuntime { get; set; }
-    [Parameter, EditorRequired] public MarkupString Html { get; set; }
+    [Parameter] public MarkupString Html { get; set; }
     [Parameter] public bool HideSaveButton { get; set; }
     [Parameter] public bool HideImageButton { get; set; }
     [Parameter] public bool AvoidPasteImages { get; set; }
@@ -15,36 +15,55 @@ public partial class RichTextEditorComponent : IAsyncDisposable
     string EditorId = $"{Guid.NewGuid()}";
     DotNetObjectReference<RichTextEditorComponent> ObjRef;
     bool EditorReady = false;
+    bool IsRendered = false;
     #endregion
 
     #region Overrides
     private Task<IJSObjectReference> GetJSObjectReference(IJSRuntime jsRuntime) =>
         jsRuntime.InvokeAsync<IJSObjectReference>(
             "import", $"./{ContentHelper.ContentPath}/js/htmlEditorService.js").AsTask();
-    protected override void OnInitialized()
+
+    protected override void OnAfterRender(bool firstRender)
     {
-        ModuleTask = new Lazy<Task<IJSObjectReference>>(() => GetJSObjectReference(JSRuntime));
+        if(firstRender)
+        {
+            IsRendered = true;
+            ModuleTask = new Lazy<Task<IJSObjectReference>>(() => GetJSObjectReference(JSRuntime));
+            StateHasChanged();
+        }
     }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender) 
     {
-        if(!EditorReady)
+        if(firstRender && IsRendered && !EditorReady)
+        {
             await CreateEditor();
+            await InvokeAsync(StateHasChanged);
+        }
     }
+
+    //protected override async Task OnParametersSetAsync()
+    //{
+    //    if(IsRendered && !EditorReady)
+    //        await CreateEditor();
+    //}
     #endregion
 
     #region IAsyncDisposable        
     public async ValueTask DisposeAsync()
     {
         ObjRef?.Dispose();
-        IJSObjectReference module = await ModuleTask.Value;
-        try
+        if(ModuleTask is not null)
         {
-            await module.InvokeVoidAsync("deleteEditor", EditorId);
-        }
-        catch(Exception ex)
-        {
-            Console.WriteLine($"Html editor: {ex}");
+            IJSObjectReference module = await ModuleTask.Value;
+            try
+            {
+                await module.InvokeVoidAsync("deleteEditor", EditorId);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Html editor: {ex}");
+            }
         }
     }
     #endregion
