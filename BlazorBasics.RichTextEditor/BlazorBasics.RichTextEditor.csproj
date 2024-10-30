@@ -1,25 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-	  <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+	  <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.5</Version>
+	  <Version>1.0.6</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
-	  <Company>Digital Door Aus</Company>
-	  <Description> A simple Rich Text Editor for Blazor Server or Blazor WebAssembly applications. This rich text editor is based in Quill Richt Text Editor (JavaScript).</Description>
+	  <Company>DrUalcman</Company>
+	  <Description>A simple Rich Text Editor for Blazor Server or Blazor WebAssembly applications. This rich text editor is based in Quill Richt Text Editor (JavaScript).</Description>
 	  <Copyright>Free</Copyright>
 	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.RichTextEditor</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>blazor;right text editor;blazor server; blazor webassembly</PackageTags>
-	  <AssemblyVersion>1.0.5</AssemblyVersion>
-	  <FileVersion>1.0.5</FileVersion>
 	  <PackageId>BlazorBasics.RichTextEditor</PackageId>
 	  <Product>BlazorBasics.RichTextEditor</Product>
 	  <Title>BlazorBasics.RichTextEditor</Title>
-	  <PackageReleaseNotes>Fixed issue when is used in Blazor Server and/or Blazor Prerendered. Avoid required Html parameter in editor, because can be used without this varialbe. Only it's required to send previous content. Update nugets and NET versions</PackageReleaseNotes>
+	  <PackageReleaseNotes>Fixed undefined exception in JAVASCRIPT. Removed NET7 because out of support. Update nugets and NET versions</PackageReleaseNotes>
   </PropertyGroup>
 
 
@@ -28,9 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.26"  Condition="'$(TargetFramework)' == 'net6.0'"/>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.15"  Condition="'$(TargetFramework)' == 'net7.0'"/>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1"  Condition="'$(TargetFramework)' == 'net8.0'"/>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.35"  Condition="'$(TargetFramework)' == 'net6.0'"/>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10"  Condition="'$(TargetFramework)' == 'net8.0'"/>
   </ItemGroup>
 
   <ItemGroup>

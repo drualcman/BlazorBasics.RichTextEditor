@@ -164,7 +164,7 @@ const setFileUploadHelper = (editorId, uploadHandler) => {
 
 const getContent = (editorId) => {
     let editor = editors.get(editorId);
-    if (editor.dotNetObjectReference !== null && editor.dotNetObjectReference !== undefined)
+    if (editor.dotNetObjectReference !== null && editor !== undefined && editor.dotNetObjectReference !== undefined)
         editor.dotNetObjectReference.invokeMethodAsync('OnSave_Click', editor.root.innerHTML);
 }
 
