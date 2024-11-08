@@ -4,7 +4,7 @@
 	  <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.6</Version>
+	  <Version>1.0.7</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
@@ -17,7 +17,7 @@
 	  <PackageId>BlazorBasics.RichTextEditor</PackageId>
 	  <Product>BlazorBasics.RichTextEditor</Product>
 	  <Title>BlazorBasics.RichTextEditor</Title>
-	  <PackageReleaseNotes>Fixed undefined exception in JAVASCRIPT. Removed NET7 because out of support. Update nugets and NET versions</PackageReleaseNotes>
+	  <PackageReleaseNotes>Fixed undefined exception with dotNetObjectReference in JAVASCRIPT.</PackageReleaseNotes>
   </PropertyGroup>
 
 
