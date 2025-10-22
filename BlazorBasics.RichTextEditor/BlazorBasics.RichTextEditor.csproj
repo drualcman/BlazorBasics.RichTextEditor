@@ -4,7 +4,7 @@
 	  <TargetFrameworks>net6.0;net8.0;net7.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.8</Version>
+	  <Version>1.0.9</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
@@ -17,7 +17,7 @@
 	  <PackageId>BlazorBasics.RichTextEditor</PackageId>
 	  <Product>BlazorBasics.RichTextEditor</Product>
 	  <Title>BlazorBasics.RichTextEditor</Title>
-	  <PackageReleaseNotes>Update license and dependencies.</PackageReleaseNotes>	  
+	  <PackageReleaseNotes>Update dependencies.</PackageReleaseNotes>	  
 	  <PackageProjectUrl>https://digitaldoor.com.au/blazor-rich-text-editor</PackageProjectUrl>
   </PropertyGroup>
 
@@ -29,8 +29,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.36" Condition="'$(TargetFramework)' == 'net6.0'" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.20" Condition="'$(TargetFramework)' == 'net7.0'" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.16" Condition="'$(TargetFramework)' == 'net8.0'" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.5" Condition="'$(TargetFramework)' == 'net9.0'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.21" Condition="'$(TargetFramework)' == 'net8.0'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.10" Condition="'$(TargetFramework)' == 'net9.0'" />
   </ItemGroup>
 
   <ItemGroup>
